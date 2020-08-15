@@ -1,0 +1,183 @@
+---- Minecraft Crash Report ----
+// There are four lights!
+
+Time: 8/16/20 2:43 AM
+Description: Initializing game
+
+java.lang.NullPointerException: Registry Object not present: mekanism:basic_fluid_tank
+	at java.util.Objects.requireNonNull(Objects.java:290) ~[?:1.8.0_51] {}
+	at net.minecraftforge.fml.RegistryObject.get(RegistryObject.java:120) ~[?:?] {re:classloading}
+	at mekanism.common.registration.DoubleWrappedRegistryObject.getPrimary(DoubleWrappedRegistryObject.java:23) ~[?:?] {re:classloading}
+	at mekanism.common.registration.impl.BlockRegistryObject.getBlock(BlockRegistryObject.java:19) ~[?:?] {re:classloading}
+	at mekanism.client.ClientRegistrationUtil.registerBlockColorHandler(ClientRegistrationUtil.java:112) ~[?:?] {re:classloading}
+	at mekanism.client.ClientRegistration.registerItemColorHandlers(ClientRegistration.java:352) ~[?:?] {re:classloading}
+	at net.minecraftforge.eventbus.ASMEventHandler_335_ClientRegistration_registerItemColorHandlers_Item.invoke(.dynamic) ~[?:?] {}
+	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:80) ~[eventbus-2.2.0-service.jar:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:258) ~[eventbus-2.2.0-service.jar:?] {}
+	at net.minecraftforge.fml.javafmlmod.FMLModContainer.acceptEvent(FMLModContainer.java:168) ~[?:31.2] {re:classloading}
+	at net.minecraftforge.fml.ModLoader.lambda$postEvent$31(ModLoader.java:260) ~[?:?] {re:classloading}
+	at net.minecraftforge.fml.ModLoader$$Lambda$6079/1056204617.accept(Unknown Source) ~[?:?] {}
+	at java.util.HashMap.forEach(HashMap.java:1280) ~[?:1.8.0_51] {}
+	at net.minecraftforge.fml.ModList.forEachModContainer(ModList.java:218) ~[?:?] {re:classloading}
+	at net.minecraftforge.fml.ModLoader.postEvent(ModLoader.java:260) ~[?:?] {re:classloading}
+	at net.minecraftforge.client.ForgeHooksClient.onItemColorsInit(ForgeHooksClient.java:212) ~[?:?] {re:classloading}
+	at net.minecraft.client.renderer.color.ItemColors.func_186729_a(ItemColors.java:84) ~[?:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.<init>(Minecraft.java:420) [?:?] {re:classloading,pl:accesstransformer:B,xf:fml:codechickenlib:IItemRenderer,xf:fml:modernui:(Method2ClassTransformerWrapper) replaceDisplayIngameMenu,pl:runtimedistcleaner:A}
+	at net.minecraft.client.main.Main.main(SourceFile:166) [?:?] {re:classloading}
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_51] {}
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_51] {}
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_51] {}
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[?:1.8.0_51] {}
+	at net.minecraftforge.fml.loading.FMLClientLaunchProvider.lambda$launchService$0(FMLClientLaunchProvider.java:51) [forge-1.15.2-31.2.36.jar:31.2] {}
+	at net.minecraftforge.fml.loading.FMLClientLaunchProvider$$Lambda$470/1825656946.call(Unknown Source) [forge-1.15.2-31.2.36.jar:31.2] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:37) [modlauncher-5.1.2.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:54) [modlauncher-5.1.2.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:72) [modlauncher-5.1.2.jar:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:81) [modlauncher-5.1.2.jar:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:65) [modlauncher-5.1.2.jar:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at java.util.Objects.requireNonNull(Objects.java:290)
+	at net.minecraftforge.fml.RegistryObject.get(RegistryObject.java:120)
+	at mekanism.common.registration.DoubleWrappedRegistryObject.getPrimary(DoubleWrappedRegistryObject.java:23)
+	at mekanism.common.registration.impl.BlockRegistryObject.getBlock(BlockRegistryObject.java:19)
+	at mekanism.client.ClientRegistrationUtil.registerBlockColorHandler(ClientRegistrationUtil.java:112)
+	at mekanism.client.ClientRegistration.registerItemColorHandlers(ClientRegistration.java:352)
+	at net.minecraftforge.eventbus.ASMEventHandler_335_ClientRegistration_registerItemColorHandlers_Item.invoke(.dynamic)
+	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:80)
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:258)
+	at net.minecraftforge.fml.javafmlmod.FMLModContainer.acceptEvent(FMLModContainer.java:168)
+	at net.minecraftforge.fml.ModLoader.lambda$postEvent$31(ModLoader.java:260)
+	at net.minecraftforge.fml.ModLoader$$Lambda$6079/1056204617.accept(Unknown Source)
+	at java.util.HashMap.forEach(HashMap.java:1280)
+	at net.minecraftforge.fml.ModList.forEachModContainer(ModList.java:218)
+	at net.minecraftforge.fml.ModLoader.postEvent(ModLoader.java:260)
+	at net.minecraftforge.client.ForgeHooksClient.onItemColorsInit(ForgeHooksClient.java:212)
+	at net.minecraft.client.renderer.color.ItemColors.func_186729_a(ItemColors.java:84)
+	at net.minecraft.client.Minecraft.<init>(Minecraft.java:420)
+
+-- Initialization --
+Details:
+Stacktrace:
+	at net.minecraft.client.main.Main.main(SourceFile:166)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at net.minecraftforge.fml.loading.FMLClientLaunchProvider.lambda$launchService$0(FMLClientLaunchProvider.java:51)
+	at net.minecraftforge.fml.loading.FMLClientLaunchProvider$$Lambda$470/1825656946.call(Unknown Source)
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:37)
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:54)
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:72)
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:81)
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:65)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.15.2
+	Minecraft Version ID: 1.15.2
+	Operating System: Windows 7 (amd64) version 6.1
+	Java Version: 1.8.0_51, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 963213008 bytes (918 MB) / 1700790272 bytes (1622 MB) up to 3008888832 bytes (2869 MB)
+	CPUs: 4
+	JVM Flags: 5 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xss1M -Xmx3228m -Xms256m -XX:PermSize=256m
+	ModLauncher: 5.1.2+70+master.2845bb9
+	ModLauncher launch target: fmlclient
+	ModLauncher naming: srg
+	ModLauncher services: 
+		/eventbus-2.2.0-service.jar eventbus PLUGINSERVICE 
+		/forge-1.15.2-31.2.36.jar object_holder_definalize PLUGINSERVICE 
+		/forge-1.15.2-31.2.36.jar runtime_enum_extender PLUGINSERVICE 
+		/accesstransformers-2.1.3-shadowed.jar accesstransformer PLUGINSERVICE 
+		/forge-1.15.2-31.2.36.jar capability_inject_definalize PLUGINSERVICE 
+		/forge-1.15.2-31.2.36.jar runtimedistcleaner PLUGINSERVICE 
+		/forge-1.15.2-31.2.36.jar fml TRANSFORMATIONSERVICE 
+		/MixinBootstrap-1.0.3.jar mixinbootstrap TRANSFORMATIONSERVICE 
+		/MixinBootstrap-1.0.3.jar mixin PLUGINSERVICE 
+		/MixinBootstrap-1.0.3.jar mixinbootstrap PLUGINSERVICE 
+	FML: 31.2
+	Forge: net.minecraftforge:31.2.36
+	FML Language Providers: 
+		javafml@31.2
+		minecraft@1
+	Mod List: 
+		astralsorcery-1.15.2-1.12.5.jar Astral Sorcery {astralsorcery@1.15.2-1.12.5 CREATE_REGISTRIES}
+		Cucumber-1.15.2-3.0.9.jar Cucumber Library {cucumber@3.0.9 CREATE_REGISTRIES}
+		jei-1.15.2-6.0.2.12.jar Just Enough Items {jei@6.0.2.12 CREATE_REGISTRIES}
+		ExtendedCrafting-1.15.2-2.0.6.jar Extended Crafting {extendedcrafting@2.0.6 CREATE_REGISTRIES}
+		Druidcraft-1.15-0.4.3.jar Druidcraft {druidcraft@0.4.3 CREATE_REGISTRIES}
+		Abnormals-Core-1.15.2-1.0.6.jar Abnormals Core {abnormals_core@1.0.6 CREATE_REGISTRIES}
+		Mekanism-1.15.2-9.10.9.422.jar Mekanism {mekanism@9.10.9 CREATE_REGISTRIES}
+		ContentTweaker-1.15-1.0.0.develop.20.jar ContentTweaker {contenttweaker@1.0.0.develop.20 CREATE_REGISTRIES}
+		SilentMechanisms-1.15.2-0.8.0+59.jar Silent's Mechanisms {silents_mechanisms@0.8.0+59 CREATE_REGISTRIES}
+		rsgauges-1.15.2-1.2.4.jar Gauges and Switches {rsgauges@1.2.4 CREATE_REGISTRIES}
+		create-mc1.15.2_v0.2.4d.jar Create {create@mc1.15.2_v0.2.4d CREATE_REGISTRIES}
+		ForgeEndertech-1.15.2-6.0.4.0-build.0044.jar Forge Endertech {forgeendertech@6.0.4.0 CREATE_REGISTRIES}
+		TerraForged-1.15.2-0.1.2.jar TerraForged {terraforged@0.1.2 CREATE_REGISTRIES}
+		Clumps-5.0.2.4.jar Clumps {clumps@5.0.2.4 CREATE_REGISTRIES}
+		journeymap-1.15.2-5.7.0b3.jar Journeymap {journeymap@5.7.0b3 CREATE_REGISTRIES}
+		comforts-FORGE-1.15.2-2.0.0.4.jar Comforts {comforts@FORGE-1.15.2-2.0.0.4 CREATE_REGISTRIES}
+		SimpleStorageNetwork-1.15.2-1.0.1.jar Simple Storage Network {storagenetwork@1.15.2-1.0.1 CREATE_REGISTRIES}
+		SereneSeasons-1.15.2-3.0.0.73-universal.jar Serene Seasons {sereneseasons@1.15.2-3.0.0.73 CREATE_REGISTRIES}
+		Powah-1.15.2-1.1.15.jar Powah {powah@1.1.15 CREATE_REGISTRIES}
+		culinaryconstruct-FORGE-1.15.2-2.0.0.2.jar Culinary Construct {culinaryconstruct@FORGE-1.15.2-2.0.0.2 CREATE_REGISTRIES}
+		Bookshelf-1.15.2-5.6.40.jar Bookshelf {bookshelf@5.6.40 CREATE_REGISTRIES}
+		DarkUtilities-1.15.2-3.1.8.jar Dark Utilities {darkutils@3.1.8 CREATE_REGISTRIES}
+		MekanismGenerators-1.15.2-9.10.9.422.jar Mekanism: Generators {mekanismgenerators@9.10.9 CREATE_REGISTRIES}
+		JEITweaker-1.15.2-1.0.1.3.jar JEI Tweaker {jeitweaker@1.0.1.3 CREATE_REGISTRIES}
+		traverse-1.15.2-3.2.0.jar Traverse {traverse@1.15.2-3.2.0 CREATE_REGISTRIES}
+		FpsReducer-mc1.15.2-1.17.jar FPS Reducer {fpsreducer@mc1.15.2-1.17 CREATE_REGISTRIES}
+		JustEnoughResources-1.15.2-0.10.1.77.jar Just Enough Resources {jeresources@0.10.1.77 CREATE_REGISTRIES}
+		CraftTweaker-1.15.2-6.0.0.39.jar CraftTweaker {crafttweaker@6.0.0.39 CREATE_REGISTRIES}
+		extradisks-1.15.2-1.2.2.jar Extra Disks {extradisks@1.15.2-1.2.2 CREATE_REGISTRIES}
+		forge-1.15.2-31.2.36-universal.jar Forge {forge@31.2.36 CREATE_REGISTRIES}
+		QuickLeafDecay-MC1.15.2-1.2.5.jar Quick Leaf Decay {quickleafdecay@1.2.5 CREATE_REGISTRIES}
+		MysticalAgradditions-1.15.2-3.0.1.jar Mystical Agradditions {mysticalagradditions@3.0.1 CREATE_REGISTRIES}
+		mysticallib-1.15.2-2.0.1.jar Mystical Lib {mysticallib@1.15.2-2.0.1 CREATE_REGISTRIES}
+		refinedstorage-1.8.8.jar Refined Storage {refinedstorage@1.8.8 CREATE_REGISTRIES}
+		MysticalAgriculture-1.15.2-3.0.10.jar Mystical Agriculture {mysticalagriculture@3.0.10 CREATE_REGISTRIES}
+		ironchest-1.15.2-10.0.3.jar Iron Chests {ironchest@1.15.2-10.0.1 CREATE_REGISTRIES}
+		CraftingTweaks_1.15.2-11.0.1.jar Crafting Tweaks {craftingtweaks@11.0.1 CREATE_REGISTRIES}
+		forge-1.15.2-31.2.36-client.jar Minecraft {minecraft@1.15.2 CREATE_REGISTRIES}
+		The-Endergetic-Expansion-1.15.2-v1.3.2.jar The Endergetic Expansion {endergetic@1.3.2 CREATE_REGISTRIES}
+		industrial-foregoing-1.15.2-2.3.3-e356e61.jar Industrial Foregoing {industrialforegoing@2.3.3 CREATE_REGISTRIES}
+		titanium-1.15.2-2.4.2.jar Titanium {titanium@2.4.2 CREATE_REGISTRIES}
+		ImmersiveEngineering-1.15.2-3.1-111.jar Immersive Engineering {immersiveengineering@1.15.2-3.1-111 CREATE_REGISTRIES}
+		Geolosys-1.15.2-4.0.21.jar Geolosys {geolosys@4.0.21 CREATE_REGISTRIES}
+		SilentLib-1.15.2-4.6.6+59.jar Silent Lib {silentlib@4.6.6+59 CREATE_REGISTRIES}
+		phosphor-forge-mc1.15.2-0.5.2+build.4.jar Phosphor {phosphor@0.5.2+build.4 CREATE_REGISTRIES}
+		Lollipop-1.15.2-1.0.16.jar Lollipop {lollipop@1.0.16 CREATE_REGISTRIES}
+		ChickenChunks-1.15.2-2.5.0.77-universal.jar ChickenChunks {chickenchunks@1.15.2-2.5.0.77 CREATE_REGISTRIES}
+		customquests-1.15.2-1.0.1.jar Custom Quests {customquests@1.15.2-1.0.1 CREATE_REGISTRIES}
+		curios-FORGE-1.15.2-2.0.2.6.jar Curios API {curios@FORGE-1.15.2-2.0.2.6 CREATE_REGISTRIES}
+		gravestone-1.17.5.jar Gravestone Mod {gravestone@1.17.5 CREATE_REGISTRIES}
+		polymorph-FORGE-1.15.2-0.10.jar Polymorph {polymorph@FORGE-1.15.2-0.10 CREATE_REGISTRIES}
+		StorageDrawers-1.15.2-7.0.2.jar Storage Drawers {storagedrawers@1.15.2-7.0.1 CREATE_REGISTRIES}
+		OreExcavation-1.7.151.jar Ore Excavation {oreexcavation@NONE CREATE_REGISTRIES}
+		fancymenu_1.4.5_MC_1.15-1.15.2.jar §dFancy§5Menu {fancymenu@1.4.5 CREATE_REGISTRIES}
+		AppleSkin-mc1.15.2-forge-1.0.14.jar AppleSkin {appleskin@1.0.14 CREATE_REGISTRIES}
+		observerlib-1.15.2-1.2.0.v60.jar ObserverLib {observerlib@1.15.2-1.2.0 CREATE_REGISTRIES}
+		ModernUI-1.15.2-1.5.9.56-universal.jar Modern UI {modernui@1.5.9.56 ERROR}
+		refinedstorageaddons-0.6.3.jar Refined Storage Addons {refinedstorageaddons@0.6.3 CREATE_REGISTRIES}
+		ScalingHealth-1.15.2-3.0.9+54.jar Scaling Health {scalinghealth@3.0.9+54 CREATE_REGISTRIES}
+		CodeChickenLib-1.15.2-3.3.1.379-universal.jar CodeChicken Lib {codechickenlib@3.3.1.379 CREATE_REGISTRIES}
+		EnderStorage-1.15.2-2.5.0.151-universal.jar EnderStorage {enderstorage@1.15.2-2.5.0.151 CREATE_REGISTRIES}
+		createintegration-0.1.7b.jar Create Integration {createintegration@0.1.7b CREATE_REGISTRIES}
+		NetherEx-1.15.2-4.0.0.jar NetherEx {netherex@4.0.0 CREATE_REGISTRIES}
+		LibraryEx-1.15.2-3.0.0.jar LibraryEx {libraryex@3.0.0 CREATE_REGISTRIES}
+		WailaHarvestability-mc1.15.2-1.1.12.jar Waila Harvestability {wailaharvestability@1.1.12 CREATE_REGISTRIES}
+	Launched Version: forge-31.2.36
+	Backend library: LWJGL version 3.2.2 build 10
+	Backend API: Intel(R) HD Graphics GL version 2.1.0 - Build 8.15.10.2993, Intel
+	GL Caps: Using framebuffer using ARB_framebuffer_object extension
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'forge'
+	Type: Client (map_client.txt)
+	CPU: 4x Intel(R) Core(TM) i3 CPU M 380 @ 2.53GHz 
